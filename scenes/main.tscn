@@ -1,8 +1,8 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://art/environment/Final/Tiles.png" type="Texture" id=1]
 [ext_resource path="res://art/character/enemy/Slice 3.png" type="Texture" id=2]
-[ext_resource path="res://scenes/Player.gd" type="Script" id=3]
+[ext_resource path="res://script/Player.gd" type="Script" id=3]
 [ext_resource path="res://art/environment/Final/Background_1.png" type="Texture" id=4]
 [ext_resource path="res://art/environment/Final/Background_0.png" type="Texture" id=5]
 [ext_resource path="res://art/environment/Final/Grass_background_1.png" type="Texture" id=6]
@@ -20,7 +20,13 @@
 [ext_resource path="res://art/character/enemy/Slice 4.png" type="Texture" id=18]
 [ext_resource path="res://art/character/enemy/Slice 5.png" type="Texture" id=19]
 [ext_resource path="res://art/character/enemy/Slice 6.png" type="Texture" id=20]
-[ext_resource path="res://script/NPCFish.gd" type="Script" id=21]
+[ext_resource path="res://scenes/fish-npc.gd" type="Script" id=21]
+[ext_resource path="res://art/character/enemy/Slice 12.png" type="Texture" id=22]
+[ext_resource path="res://art/character/enemy/Slice 9.png" type="Texture" id=23]
+[ext_resource path="res://art/character/enemy/Slice 7.png" type="Texture" id=24]
+[ext_resource path="res://art/character/enemy/Slice 11.png" type="Texture" id=25]
+[ext_resource path="res://art/character/enemy/Slice 8.png" type="Texture" id=26]
+[ext_resource path="res://art/character/enemy/Slice 10.png" type="Texture" id=27]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -676,6 +682,11 @@ extents = Vector2( 80.75, 17 )
 animations = [ {
 "frames": [ ExtResource( 17 ), ExtResource( 2 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
+"name": "IDLE",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 26 ), ExtResource( 23 ), ExtResource( 27 ), ExtResource( 25 ), ExtResource( 22 ) ],
+"loop": true,
 "name": "walk",
 "speed": 5.0
 } ]
@@ -811,28 +822,31 @@ motion_mirroring = Vector2( 1440, 0 )
 
 [node name="Word2" type="Node" parent="."]
 
-[node name="NPC" type="KinematicBody2D" parent="Word2"]
-position = Vector2( -111, 135 )
+[node name="npc" type="KinematicBody2D" parent="Word2"]
+position = Vector2( -59, 77 )
 script = ExtResource( 21 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Word2/NPC"]
-texture = ExtResource( 9 )
+[node name="Sprite" type="Sprite" parent="Word2/npc"]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Word2/NPC/Sprite"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Word2/npc/Sprite"]
 frames = SubResource( 18 )
 animation = "walk"
 frame = 1
 playing = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Word2/NPC"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Word2/npc"]
 position = Vector2( -0.75, 1.75 )
 shape = SubResource( 19 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Timer" type="Timer" parent="Word2/npc"]
+
+[connection signal="timeout" from="Word2/npc/Timer" to="Word2/npc" method="_on_Timer_timeout"]
