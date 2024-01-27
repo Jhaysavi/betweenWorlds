@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://art/environment/Final/Tiles.png" type="Texture" id=1]
 [ext_resource path="res://art/character/enemy/Slice 3.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://art/character/enemy/Slice 4.png" type="Texture" id=18]
 [ext_resource path="res://art/character/enemy/Slice 5.png" type="Texture" id=19]
 [ext_resource path="res://art/character/enemy/Slice 6.png" type="Texture" id=20]
+[ext_resource path="res://script/NPCFish.gd" type="Script" id=21]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -810,25 +811,26 @@ motion_mirroring = Vector2( 1440, 0 )
 
 [node name="Word2" type="Node" parent="."]
 
-[node name="player2" type="KinematicBody2D" parent="Word2"]
+[node name="NPC" type="KinematicBody2D" parent="Word2"]
 position = Vector2( -111, 135 )
+script = ExtResource( 21 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Word2/player2"]
+[node name="Sprite" type="Sprite" parent="Word2/NPC"]
 texture = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Word2/player2/Sprite"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Word2/NPC/Sprite"]
 frames = SubResource( 18 )
 animation = "walk"
-frame = 3
+frame = 1
 playing = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Word2/player2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Word2/NPC"]
 position = Vector2( -0.75, 1.75 )
 shape = SubResource( 19 )
 __meta__ = {
