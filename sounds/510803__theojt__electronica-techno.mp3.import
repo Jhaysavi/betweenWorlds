@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/510803__theojt__electronica-techno.mp3-7b6b26d0be0794e219e280d9d12653f9.mp3str"
+
+[deps]
+
+source_file="res://sounds/510803__theojt__electronica-techno.mp3"
+dest_files=[ "res://.import/510803__theojt__electronica-techno.mp3-7b6b26d0be0794e219e280d9d12653f9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

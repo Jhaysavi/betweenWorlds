@@ -47,11 +47,11 @@ func move(delta):
 		
 	if position.x >= start_pos.x + 20:
 		position.x = start_pos.x + 19.9
-	elif position.x >= start_pos.x - 20:
+	if position.x >= start_pos.x - 20:
 		position.x = start_pos.x - 19.9
-	elif position.y >= start_pos.y + 20:
+	if position.y >= start_pos.y + 20:
 		position.y = start_pos.y + 19.9
-	elif position.y >= start_pos.y - 20:
+	if position.y >= start_pos.y - 20:
 		position.y = start_pos.y - 19.9
 	
 
