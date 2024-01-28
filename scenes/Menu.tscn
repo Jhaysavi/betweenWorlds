@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://scenes/Menu.gd" type="Script" id=1]
+[ext_resource path="res://script/Menu.gd" type="Script" id=1]
 [ext_resource path="res://art/environment/Final/background.jpeg" type="Texture" id=2]
 
 [node name="Node2D" type="Node2D"]
@@ -21,8 +21,8 @@ margin_right = 20.0
 margin_bottom = 20.0
 
 [node name="Sprite" type="Sprite" parent="Menu/CenterContainer"]
-position = Vector2( -72, 175 )
-scale = Vector2( 1.34301, 1.2433 )
+position = Vector2( 114.749, 190.501 )
+scale = Vector2( 1.62091, 1.2779 )
 texture = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="."]
@@ -37,14 +37,14 @@ margin_left = 252.0
 margin_top = 95.0
 margin_right = 575.0
 margin_bottom = 157.0
-text = "Quit"
+text = "Jogar"
 
 [node name="start" type="Button" parent="."]
 margin_left = 254.0
 margin_top = 172.0
 margin_right = 573.0
 margin_bottom = 244.0
-text = "Start"
+text = "Sair"
 
 [connection signal="pressed" from="quit" to="Menu" method="_on_quit_pressed"]
 [connection signal="pressed" from="start" to="Menu" method="_on_start_pressed"]
