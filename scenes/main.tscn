@@ -844,7 +844,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="World2/npc/Sprite"]
 frames = SubResource( 18 )
 animation = "walk"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World2/npc"]
