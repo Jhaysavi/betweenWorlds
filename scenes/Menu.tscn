@@ -21,29 +21,29 @@ margin_right = 20.0
 margin_bottom = 20.0
 
 [node name="Sprite" type="Sprite" parent="Menu/CenterContainer"]
-position = Vector2( 114.749, 190.501 )
-scale = Vector2( 1.62091, 1.2779 )
+position = Vector2( 290, 173 )
+scale = Vector2( 1.37054, 1.21205 )
 texture = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 338.0
-margin_top = 54.0
-margin_right = 464.0
-margin_bottom = 83.0
+margin_left = 110.0
+margin_top = 225.0
+margin_right = 236.0
+margin_bottom = 254.0
 text = "Pesadelo Sarcastico"
 
 [node name="quit" type="Button" parent="."]
-margin_left = 252.0
-margin_top = 95.0
-margin_right = 575.0
-margin_bottom = 157.0
+margin_left = 25.0
+margin_top = 286.0
+margin_right = 348.0
+margin_bottom = 348.0
 text = "Jogar"
 
 [node name="start" type="Button" parent="."]
-margin_left = 254.0
-margin_top = 172.0
-margin_right = 573.0
-margin_bottom = 244.0
+margin_left = 25.0
+margin_top = 370.0
+margin_right = 344.0
+margin_bottom = 442.0
 text = "Sair"
 
 [connection signal="pressed" from="quit" to="Menu" method="_on_quit_pressed"]
