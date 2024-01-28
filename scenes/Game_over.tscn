@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://script/Menu.gd" type="Script" id=1]
-[ext_resource path="res://art/environment/Final/background.jpeg" type="Texture" id=2]
+[ext_resource path="res://Game_Over.jpg" type="Texture" id=3]
 
-[node name="Menu" type="Node2D"]
+[node name="Game Over" type="Node2D"]
 
 [node name="Menu" type="Control" parent="."]
 anchor_right = 1.0
@@ -21,9 +21,9 @@ margin_right = 20.0
 margin_bottom = 20.0
 
 [node name="Sprite" type="Sprite" parent="Menu/CenterContainer"]
-position = Vector2( 550.923, 258 )
-scale = Vector2( 0.913696, 0.808036 )
-texture = ExtResource( 2 )
+position = Vector2( 529.371, 285.013 )
+scale = Vector2( 0.617896, 0.546442 )
+texture = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 110.0
@@ -33,17 +33,17 @@ margin_bottom = 254.0
 text = "Pesadelo Sarcastico"
 
 [node name="quit" type="Button" parent="."]
-margin_left = 25.0
-margin_top = 286.0
-margin_right = 348.0
-margin_bottom = 348.0
+margin_left = 334.0
+margin_top = 77.0
+margin_right = 657.0
+margin_bottom = 139.0
 text = "Jogar"
 
 [node name="start" type="Button" parent="."]
-margin_left = 25.0
-margin_top = 370.0
-margin_right = 344.0
-margin_bottom = 442.0
+margin_left = 336.0
+margin_top = 178.0
+margin_right = 655.0
+margin_bottom = 250.0
 text = "Sair"
 
 [connection signal="pressed" from="quit" to="Menu" method="_on_quit_pressed"]
